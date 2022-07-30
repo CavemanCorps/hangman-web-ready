@@ -1,0 +1,28 @@
+.myHangman {
+  text-align: center;
+  height: 100vh;
+  background-color: wheat;
+  font-family: sans-serif;
+}
+
+/* REMEMBER THAT THE FIRST "BUTTON-DIV" CONTAINS THE ROCK, PAPER, AND SCISSORS BUTTON ELEMENTS. THE SECOND ONE CONTAINS ONLY THE
+RESET BUTTON. THIS CLASS SIMPLY CENTERS THE BUTTONS, PUT THEM SIDE-BY-SIDE, AND GIVE THEM PADDING AT THE TOP. */
+.button-div {
+  display: flex;
+  justify-content: center;
+}
+
+/* THE INDIVIDUAL BUTTONS. 
+NOTE: JUSTIFY-CONTENT: SPACE-AROUND IS THIS: The items are evenly distributed within the alignment container along the main 
+axis. The spacing between each pair of adjacent items is the same. The first item is flush with the main-start edge, and the 
+last item is flush with the main-end edge.*/
+.button {
+  width: 150px;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: coral;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
