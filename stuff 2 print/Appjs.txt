@@ -1,3 +1,5 @@
+// ALL THIS STUFF FROM SRC. NOTHING OF MY OWN IN PUBLIC NOR ANYTHING USED IN SRC.
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
