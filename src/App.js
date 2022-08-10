@@ -51,11 +51,7 @@ function App() {
     setMarkdown(newMarkdown);
     setLetter(newLetter);
   };
-
-  const endGame = () => {
-    return gameOver || winner;
-  }
-
+  
   const reset = () => {
     window.location.reload();
   };
@@ -101,7 +97,8 @@ function App() {
         id="input"
         onChange={handleKeyPress}
         value={markdown}
-        disabled={endGame()}
+        // disabled={endGame()}
+        disabled={gameOver || winner}
       />
       {/* DISABLE TEXT AREA AT GAME OVER */}
 
