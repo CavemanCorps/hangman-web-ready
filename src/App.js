@@ -15,6 +15,8 @@ const CHALLENGES = [
   "amen"
 ];
 
+let noose = ["", "|", "", "", "|", "", "", "|", ""];
+
 let layouts = [
   ["", "", "", "", "", "", "", "", ""],
   ["", "o", "", "", "", "", "", "", ""],
@@ -59,6 +61,7 @@ function App() {
   useEffect(() => {
     if (blanks === challenge) {
       setWinner(true); // moved this from the "else if" to here and that worked
+      layout[1] = "😎"
     }
     if (challenge.includes(letter)) {
       let newBlanks = blanks
@@ -75,7 +78,7 @@ function App() {
         setLayout(layouts[0]);
       } else {
         setGameOver(true);
-        setLayout(["", "o", "", "-", "|", "-", "/", "", " \\"]);
+        setLayout(["", "😢", "", "-", "|", "-", "/", "", " \\"]);
       }
     }
     console.log(blanks, challenge, blanks === challenge);
@@ -87,8 +90,9 @@ function App() {
   return (
     <div className="myHangman">
       <h2 id="stickman">
-        {layout.slice(0, 3)} <br /> {layout.slice(3, 6)} <br />{" "}
-        {layout.slice(6, 9)}
+        {noose.slice(0, 3)} <br /> {noose.slice(3, 6)} <br />{noose.slice(6, 9)} <br />
+
+        {layout.slice(0, 3)} <br /> {layout.slice(3, 6)} <br />{" "}{layout.slice(6, 9)}
       </h2>
       <h3 id="blanks">{blanks}</h3>
       <h3>{letter}</h3>
