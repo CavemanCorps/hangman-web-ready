@@ -27,7 +27,7 @@ let layouts = [
 
 function App() {
   const [challenge, setChallenge] = useState("...");
-  const [letter, setLetter] = useState("Enter letter. Good luck 😊");
+  const [letter, setLetter] = useState("Please enter letter");
   const [blanks, setBlanks] = useState("");
   const [markdown, setMarkdown] = useState("");
   const [layout, setLayout] = useState(layouts[0]);
@@ -51,7 +51,7 @@ function App() {
     setMarkdown(newMarkdown);
     setLetter(newLetter);
   };
-  
+
   const reset = () => {
     window.location.reload();
   };
@@ -67,10 +67,9 @@ function App() {
         .join("");
       setBlanks(newBlanks);
     } else if (
-      letter !== "Enter letter. Good luck 😊" &&
+      letter !== "Please enter letter" &&
       !challenge.includes(letter)
     ) {
-      // FINALLY GOT THIS SHIT WORKING. MADE ANOTHER COPY IN CASE I FUCK UP
       if (layouts.length - 1 > 1) {
         layouts.shift();
         setLayout(layouts[0]);
@@ -97,13 +96,11 @@ function App() {
         id="input"
         onChange={handleKeyPress}
         value={markdown}
-        // disabled={endGame()}
         disabled={gameOver || winner}
       />
       {/* DISABLE TEXT AREA AT GAME OVER */}
 
       <div className="button-div">
-        {/* {" "} */}
         {/* ONLY RENDERED WHEN THE GAME IS OVER */}
         {gameOver && (
           <button className="button" onClick={() => reset()}>
@@ -113,7 +110,6 @@ function App() {
       </div>
 
       <div className="winner-message">
-        {" "}
         {/* ONLY RENDERED WHEN THE GAME IS OVER */}
         {winner && (
           <button className="button" onClick={() => reset()}>
