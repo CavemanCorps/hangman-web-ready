@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from "react";
-//import "/src/styles.css";
 import "./App.css";
 
 const CHALLENGES = [
-  "his kingdom come",
-  "perfect lamb",
-  "the four gospels",
-  "jesus christ",
-  "holy water",
-  "the lord is my shephard",
-  "david and goliath",
-  "holy trinity",
-  "moses and the ark",
-  "amen"
+  "tiger",
+  "zebra",
+  "red panda",
+  "capybara",
+  "ring tailed lemur",
+  "polar bear",
+  "meerkat"
 ];
-
-let noose = ["", "|", "", "", "|", "", "", "|", ""];
 
 let layouts = [
   ["", "", "", "", "", "", "", "", ""],
@@ -81,7 +75,6 @@ function App() {
         setLayout(["", "😢", "", "-", "|", "-", "/", "", " \\"]);
       }
     }
-    console.log(blanks, challenge, blanks === challenge);
   }, [letter, blanks, challenge, winner]);
   useEffect(() => {
     generatePhrase();
@@ -89,9 +82,8 @@ function App() {
 
   return (
     <div className="myHangman">
-      <h2 id="stickman">
-        {noose.slice(0, 3)} <br /> {noose.slice(3, 6)} <br />{noose.slice(6, 9)} <br />
-
+      <h2 id="blanks">
+        | <br /> | <br /> | <br />
         {layout.slice(0, 3)} <br /> {layout.slice(3, 6)} <br />{" "}{layout.slice(6, 9)}
       </h2>
       <h3 id="blanks">{blanks}</h3>
@@ -104,22 +96,12 @@ function App() {
       />
       {/* DISABLE TEXT AREA AT GAME OVER */}
 
-      <div className="button-div">
-        {/* ONLY RENDERED WHEN THE GAME IS OVER */}
-        {gameOver && (
-          <button className="button" onClick={() => reset()}>
-            Restart Game?
-          </button>
-        )}
-      </div>
-
-      <div className="winner-message">
-        {/* ONLY RENDERED WHEN THE GAME IS OVER */}
-        {winner && (
-          <button className="button" onClick={() => reset()}>
-            You Win! Play Again?
-          </button>
-        )}
+      <div className="message-button">
+          {gameOver || winner ? (
+            <button className="button" onClick={() => reset()}>
+              {gameOver ? 'Restart Game?' : 'You Win! Play Again?'}
+            </button>
+          ) : ''}
       </div>
     </div>
   );
