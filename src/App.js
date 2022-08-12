@@ -12,13 +12,13 @@ const CHALLENGES = [
 ];
 
 let layouts = [
-  ["", "", "", "", "", "", "", "", ""],
+  [""],
   ["", "o", "", "", "", "", "", "", ""],
   ["", "o", "", "-", "", "", "", "", ""],
   ["", "o", "", "-", "|", "", "", "", ""],
   ["", "o", "", "-", "|", "-", "", "", ""],
   ["", "o", "", "-", "|", "-", "/", "", ""],
-  ["", "o", "", "-", "|", "-", "/", "", " \\"]
+  ["placeholder"]
 ];
 
 function App() {
@@ -67,6 +67,7 @@ function App() {
       letter !== "Please enter letter" &&
       !challenge.includes(letter)
     ) {
+      //if (layouts.length - 1 > 1) {
       if (layouts.length - 1 > 1) {
         layouts.shift();
         setLayout(layouts[0]);
@@ -82,9 +83,9 @@ function App() {
 
   return (
     <div className="myHangman">
-      <h2 id="blanks">
+      <h2 id="stickman">
         | <br /> | <br /> | <br />
-        {layout.slice(0, 3)} <br /> {layout.slice(3, 6)} <br />{" "}{layout.slice(6, 9)}
+        {layout.slice(0, 3)} <br /> {layout.slice(3, 6)} <br /> {layout.slice(6, 9)}
       </h2>
       <h3 id="blanks">{blanks}</h3>
       <h3>{letter}</h3>
@@ -94,7 +95,6 @@ function App() {
         value={markdown}
         disabled={gameOver || winner}
       />
-      {/* DISABLE TEXT AREA AT GAME OVER */}
 
       <div className="message-button">
           {gameOver || winner ? (
