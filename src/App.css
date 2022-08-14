@@ -26,3 +26,8 @@ last item is flush with the main-end edge.*/
   border-radius: 5px;
   cursor: pointer;
 }
+
+.title {
+  padding-top: 50px;
+  text-align: center;
+}
