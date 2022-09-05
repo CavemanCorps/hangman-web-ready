@@ -102,6 +102,12 @@ function App() {
             </button>
           ) : ''}
       </div>  
+
+      <div className="title">
+        <h2>Hangman: Zoo Animal Edition</h2>
+        <h3>by Roman Navarro</h3>
+      </div>
+    </div>
     </div>
   );
 }
