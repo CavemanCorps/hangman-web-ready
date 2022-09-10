@@ -107,7 +107,6 @@ function App() {
         <h3>by Roman Navarro</h3>
       </div>
     </div>
-    </div>
   );
 }
 export default App;
