@@ -82,32 +82,31 @@ function App() {
 
   return (
     <div className="myHangman">
-      <h2 id="stickman">
+      <h2>
         | <br /> | <br /> | <br />
         {layout.slice(0, 3)} <br /> {layout.slice(3, 6)} <br /> {layout.slice(6, 9)}
       </h2>
-      <h3 id="blanks">{blanks}</h3>
+      <h3 >{blanks}</h3>
       <h3>{letter}</h3>
       <textarea
-        id="input"
         onChange={handleKeyPress}
         value={markdown}
         disabled={gameOver || winner}
       />
 
-      <div className="message-button">
+      <div>
           {gameOver || winner ? (
             <button className="button" onClick={() => reset()}>
               {gameOver ? 'Restart Game?' : 'You Win! Play Again?'}
             </button>
           ) : ''}
-      </div>
-      
+      </div>  
+
       <div className="title">
-      <h2>Hangman: Zoo Animal Edition</h2>
-      <h3>by Roman Navarro</h3>
+        <h2>Hangman: Zoo Animal Edition</h2>
+        <h3>by Roman Navarro</h3>
       </div>
-      
+    </div>
     </div>
   );
 }
