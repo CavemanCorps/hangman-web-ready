@@ -67,7 +67,6 @@ function App() {
       letter !== "Please enter letter" &&
       !challenge.includes(letter)
     ) {
-      //if (layouts.length - 1 > 1) {
       if (layouts.length - 1 > 1) {
         layouts.shift();
         setLayout(layouts[0]);
