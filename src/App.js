@@ -111,4 +111,6 @@ function App() {
 }
 export default App;
 
+// DEPLOYED TO HEROKU. Domain: https://hangman-romanrenders.herokuapp.com/
+
 
